@@ -1,20 +1,18 @@
-import { ReactDOM } from 'react'
-import { createBrowserRouter, RouterProvider, Route, Router} from "react-router-dom"
-import './App.css'
-import { Frontpage } from './pages/Frontpage/Frontpage'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Frontpage from "./pages/Frontpage/Frontpage";
+import { Layout } from "./layout/Layout";
+
 function App() {
-  
   return (
-  
-<>
-<createBrowserRouter>
-  <Router>
-    <Route path="/" component={Frontpage} />
-  </Router>
-</createBrowserRouter>
-</>
-    
-  )
+    <Routes>
+      <Route path="/" element={<Layout />}>
+      <Route index element={<Frontpage />} />
+    </Route>
+    </Routes>
+
+  );
 }
 
-export default App
+export default App;
