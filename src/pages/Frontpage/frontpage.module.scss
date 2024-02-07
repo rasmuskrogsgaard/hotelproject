@@ -1,0 +1,36 @@
+.newsStyling {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    img{
+        width: 100%;
+        background-color: white;
+
+    }
+
+    figcaption{
+        background-color: white;
+        width: 100%;
+        text-align: center;
+    
+        background-color: white;
+        transition-delay: 1s ease; 
+       
+    }
+
+    
+    figcaption:hover{
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        color: red;
+        font-size: large;
+        background-color: white;
+        transition-delay: 1s ease; 
+       
+    }
+
+}
+
+
+
+
