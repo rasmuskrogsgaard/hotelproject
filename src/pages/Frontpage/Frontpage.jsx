@@ -1,12 +1,8 @@
-import { useState } from "react";
+
 import { useFetch } from "../../hooks/useFetch";
 import style from "./frontpage.module.scss";
 const Frontpage = () => {
   const { data: news, loading, error } = useFetch('http://localhost:4000/news');
-  const recommendations = useFetch('http://localhost:4000/destinations/danmark/aalborg/overlook-aalborg-city/standard');
-  const [hoverDetails, setHoverDetails] = useState(false);
-
-  console.log(recommendations);  
   
  
   if (loading) {    
@@ -25,29 +21,19 @@ const Frontpage = () => {
     <div className={style.newsStyling}>
       
       {slicedNews.map((item) => (
-        <figure key={item.id}>
+        <figure key={item.id} className={style.newsItem}>
           <figcaption>
           <img src={`../../../src/assets/images/${item.image.filename}`}/>
-          {item.title}
-          <p>{item.teaser}</p>
+          
+          <h5>{item.title}</h5>
           </figcaption>
+          <p className={style.hoverElement}>{item.teaser}</p>
           </figure>
         
       ))}
-
+  
+  
       
-        {/* <h1>Se vores udvalg af værelser</h1>
-        <section>
-        {recommendations.map((item)=>(
-          <figure key={item.id}>
-          <figurecaption>
-        
-          </figurecaption>
-          </figure>
-          
-        ))}
-         </section>
-      */}
       
     </div>
     </>
@@ -57,4 +43,4 @@ const Frontpage = () => {
  
 };
 
-export default Frontpage;
+export default Frontpage; 

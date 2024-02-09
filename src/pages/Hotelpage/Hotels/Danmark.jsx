@@ -1,32 +1,33 @@
 import { useFetch } from "../../../hooks/useFetch";
 import style from "./danmark.module.scss";
+
 export const Danmark = () => {
   const {
-    data: denmarkDetails,
+    data: danmarkDetails,
     loading,
     error,
   } = useFetch("http://localhost:4000/destinations/danmark");
-  console.log(denmarkDetails);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error || !danmarkDetails || !danmarkDetails.cities) {
+    return <div>Error: Unable to fetch data</div>;
   }
 
   return (
-    <div>
-      {/* {denmarkDetails.map((item) => (
-        <section className={style.danmarkSection}>
-          <p>{item.cities}</p>
-          <img
-            src={`../../../src/assets/images/${denmarkDetails.CountryImage.country_image_filename}`}
-            alt={item.name}
-          />
-        </section>
-      ))} */}
+    <div className={style.container}>
+      <p>{danmarkDetails.description}</p>
+      <div className={style.cityList}>
+        {danmarkDetails.cities.map((item) => (
+          <figure key={item.city_id}>
+            <figcaption>
+              <img
+                src={`../../../src/assets/images/${item.CityImage.city_image_filename}`}
+                alt={item.name}
+              />
+              <p>{item.name}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
     </div>
   );
 };

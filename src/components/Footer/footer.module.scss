@@ -2,14 +2,24 @@
 margin: auto;
 background-color: white;
 margin: 0;
+margin-top: 100px;
+padding: 0;
+height: 100px;
+text-align: center;
+align-items: center;
 
 ul{
+    padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: start;
+    gap: 40px;
+
+   
 }
     li{
         list-style: none;
+        
     }   
 
     a{
@@ -17,7 +27,23 @@ ul{
         font-size: 1.1rem;
         color: black;
         transition: all 0.2s ease;
-        padding: 8px;
+        
     }
 
+    .Socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}
+
+
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
 }

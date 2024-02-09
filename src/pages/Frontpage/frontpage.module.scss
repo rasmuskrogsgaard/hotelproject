@@ -1,36 +1,39 @@
 .newsStyling {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    img{
-        width: 100%;
-        background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  img {
+    width: 100%;
+    background-color: white;
+  }
 
-    }
+  .newsItem {
+    position: relative;
+    background-color: white;
+  }
 
-    figcaption{
-        background-color: white;
-        width: 100%;
-        text-align: center;
-    
-        background-color: white;
-        transition-delay: 1s ease; 
-       
-    }
+  .newsItem:hover h5 {
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
 
-    
-    figcaption:hover{
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        color: red;
-        font-size: large;
-        background-color: white;
-        transition-delay: 1s ease; 
-       
-    }
+  .hoverElement {
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(0);
+  }
 
+  .newsItem:hover .hoverElement {
+    opacity: 1;
+    transform: translateY(-100%);
+    color: white;
+  }
 }
-
-
-
-
