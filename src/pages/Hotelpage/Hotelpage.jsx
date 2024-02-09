@@ -37,7 +37,7 @@ export const HotelPage = () =>  {
 
 
     return (
-        <div>
+        <div className={style.hotelContainer}>
             
 
             <ul className={style.hotelNav}>

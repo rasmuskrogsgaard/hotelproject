@@ -1,0 +1,25 @@
+.resContainer {
+  max-width: 400px;
+  margin: auto;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input{
+    margin-bottom: 5px;
+  }
+
+  textarea {
+    resize: none;
+    width: 98.5%;
+    height: 100px;
+  }
+  
+  button{
+    background-color: red;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+  }
+}
